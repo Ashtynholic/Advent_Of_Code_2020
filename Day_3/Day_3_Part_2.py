@@ -39,12 +39,13 @@ for slope in slope_list:
     tree_counter = 0
     end_of_file = False
 
-    print(slope)
-    #assign a slope fromt he list to index down and index right
-    print(slope[0])
-    print(slope[1])
+    # print(slope)
+    # #assign a slope fromt he list to index down and index right
+    # print(slope[0])
+    # print(slope[1])
     for line in sled_list:
             if end_of_file:
+                #when break executes, its breaking the current for line, and moving to the next 
                 break
             try: 
                 if sled_list [movement_down] [movement_right] == "#":
@@ -56,6 +57,7 @@ for slope in slope_list:
                 if movement_right > len(line)-1: 
                     movement_right = movement_right -len(line)
                 if movement_down > len(sled_list):
+                    #this was because we were reaching the end of the file, and needed to repeat back at top
                     end_of_file = True
                 
             except IndexError:
@@ -66,11 +68,7 @@ for slope in slope_list:
 
     final_tree_count.append(tree_counter)
 
-print(final_tree_count)    
-
-
-
-
+# print(final_tree_count)    
 #This is a temporary variable number, when walking a list this will always mean the current item on that list
 #every time the loop runs it will be the next item after
 product = 1  
@@ -84,8 +82,7 @@ print(product)
 
 # nums = [1, 2, 3]
 
-# product = 1  # Don't use 0 here, otherwise, you'll get zero 
-#              # because anything times zero will be zero.
+# product = 1  # Don't use 0 here, otherwise, you'll get zero because were MULTIPLYING
 # for num in nums:
 #     product *= num
 
@@ -102,5 +99,9 @@ print(product)
 #if the item there is equal to a "#" increment a counter of how many "#" (Trees) weve found, no tree = no need to keep track of
 #were going to have to increment the index for how far were going. were going to need a varible that stores the index of how far weve gone and checks if it is higher than the width of the list. if it is higher, then we need to change it by subtracting the width of the list by that number.
 #two indexs here, 3 right and 1 down
+
+
+
+
 
 

@@ -1,0 +1,40 @@
+Apply conditionals to design a recommendation algorithm for a category of your choice.
+
+The Internet is built on recommendation algorithms, from your social media feed to your music player app. Even Khan Academy has a recommendation engine for helping users find what to work on next! These systems gather data about a user’s attributes, behaviors, and preferences and use this data to match each user to content they think is most relevant to them.
+In this project, you’ll build your own recommendation engine for a category you know a lot about.
+
+Choosing a category
+First, you need to choose something to make recommendations around. This could be anything from songs, to books, to recipes - it can even be as niche as dog breeds or football teams.
+
+-Choose at least five different items within your category, and create a variable at the top of your program for each item.
+
+These will be the items your recommendation algorithm selects from.
+
+Collecting user data
+Consider what user attributes or preferences might influence which of the items a user likes. For example, perhaps users who live in an urban area might prefer a small dog over a large dog.
+
+-Use the input() function to ask the user at least three questions about their interests or characteristics.
+
+Their answers will be the user data you use to guide your recommendation algorithm.
+
+Designing an algorithm
+Before you get to the code, start by thinking about what decision points you want to have. For example, should it branch first based on their favorite musical genre or based on their age? Consider drawing a control flow diagram to plan out your algorithm.
+
+Then, translate your algorithm into code.
+-Use conditionals to select a recommendation from among your variables, based on the user’s answers.
+-Include at least two compound conditions, chained conditionals, or nested conditionals.
+-Add comments to document any assumptions you make with your selections.
+
+At the end of the program, you should have a final recommendation to print out for the user to see. Make sure that all possible paths through the program result in a single recommendation.
+
+More to explore
+Consider what assumptions or generalizations you made while developing your algorithm. Just like all algorithms, yours will represent a point of view. How might the choices you made influence your algorithm’s accuracy across different user groups?
+Test your program with your friends and family, and see how they respond to the recommendation they get. Based on their feedback, try and refine your algorithm to produce more accurate results. You might need to adjust your decision points, change or add to the questions you ask, or increase the number of options. Programmers commonly work in build-test-refine loops like this to improve their projects in response to user feedback!
+Finally, consider if you can refactor your program to make it easier for someone to interpret your algorithm. Can you make your code more readable or reduce the number of comparisons by reorganizing your conditions?
+
+Project goal	
+Asks the user for at least three different attributes or preferences.	
+Chooses between at least five different recommendation options.	
+Includes at least two compound conditions, chained conditionals, or nested conditionals.	
+All possible paths end with a single recommendation.	
+Good code readability, documentation, and style.	

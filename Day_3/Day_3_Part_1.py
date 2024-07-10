@@ -16,8 +16,7 @@ tree_counter = 0
 f = open("inputAoC3.txt") 
 for line in f.readlines():
     map_list.append(line)
-#search through everything and remove any newlines if they are present in the data
-# map_list = [line.replace('\n','') for line in map_list]    
+#search through everything and remove any newlines if they are present in the data  
 for line in map_list:
     sled_list.append(line.replace('\n',''))
 #so in order to count the trees, we need to create a program that uses the 1 down three right pattern continuously until we reach the end of the list and keep track of all of trees (#'s) we cross paths with on the way
@@ -25,10 +24,11 @@ for line in sled_list:
     try: 
         if sled_list [index_down] [index_right] == "#":
             tree_counter = tree_counter +1
-    #were always going donw by 1, and the program stops at the end of the list.       
+    #were always going down by 1, and the program stops at the end of the list.       
         index_down = index_down +1
     #We can run out of width, but we know that the patterns repeat, so we fake them repeating by subtracting the length of the list if we go over.  
         index_right = index_right +3
+        #because this is an index, were saying the len(line -1) because indexs start at 0 but len starts at 1
         if index_right > len(line)-1: 
             index_right = index_right -len(line)
     except IndexError:

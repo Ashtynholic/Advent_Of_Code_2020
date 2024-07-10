@@ -42,7 +42,7 @@ print (split_password_entry)
 # letter = split_password_entry[1][0]     
 # print (letter)
 for line in Passwords:
-    #reset the letter_found_counter to 0
+    #reset the letter_found_counter to 0 this is re intializing the variable in the loop
     letter_found_counter = 0
     split_password_entry = line.split()
     password = split_password_entry [2] 
@@ -63,7 +63,8 @@ for line in Passwords:
     if first_letter == letter:
         letter_found_counter = letter_found_counter +1
     if second_letter == letter:
-        letter_found_counter = letter_found_counter +1        
+        letter_found_counter = letter_found_counter +1    
+        #if we only found the letter once, its a valid password    
     if letter_found_counter == 1:   
         valid_password_counter = valid_password_counter +1
 print ("The number of valid passwords is", valid_password_counter)  

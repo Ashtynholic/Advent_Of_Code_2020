@@ -66,52 +66,58 @@ for line in basedata:
 # how do i determine and append that data, then use elif statements and partitioning to determine the range over the next 6 letters
 
 import math
-bottom_row = 0
-top_row = 127
-left_column = 0
-right_column = 7
 
-
+seat_id_list = []
 rows = []
 columns = []
 row = 0
 
 # fixed boarding pass = BFFFBBFRRR: row 70, column 7, seat ID 567
-example = seat_list[0]
+# example = seat_list[0]
 # "BFFFBBFRRR"row 70, column 7, seat ID 567
 # "FFFBBBFRRR"row 14, column 7, seat ID 119.
 # "BBFFBBFRLL"row 102, column 4, seat ID 820.
 # example need to equal the count of the seat list
-
-rows = example[:7:1]
-columns = example[7:10:1]
-
-for character in rows:
-    if character == "B":
-        bottom_row = math.ceil(bottom_row + ((top_row-bottom_row)/2)) #the upper bound is 127, so this makes the      lower bound 64
-        # math.ceil is rounding up the numbers to the to the highest
-        row = bottom_row
-    if character == "F":
-        top_row = math.floor(top_row - ((top_row-bottom_row)/2)) #the upper is 127, this makes the top half of 127 (64-127)
-        # math.floor is rounding numbers to the lowest
-        row = top_row
-        
-    print(row)
-        
-for i in columns: 
-    if i == "R":
-        left_column = math.ceil(left_column + ((right_column-left_column)/2))
-        column = left_column
-    if i == "L":
-        right_column = math.floor(right_column - ((right_column-left_column)/2))
-        column = right_column
-     
-    print(column)
+for example in seat_list:
+    bottom_row = 0
+    top_row = 127
+    left_column = 0
+    right_column = 7
     
+    rows = example[:7:1]
+    columns = example[7:10:1]
+
+    for character in rows:
+        if character == "B":
+            bottom_row = math.ceil(bottom_row + ((top_row-bottom_row)/2)) #the upper bound is 127, so this makes the      lower bound 64
+            # math.ceil is rounding up the numbers to the to the highest
+            row = bottom_row
+        if character == "F":
+            top_row = math.floor(top_row - ((top_row-bottom_row)/2)) #the upper is 127, this makes the top half of 127 (64-127)
+            # math.floor is rounding numbers to the lowest
+            row = top_row
+            
+        # print(row)
+            
+    for i in columns: 
+        if i == "R":
+            left_column = math.ceil(left_column + ((right_column-left_column)/2))
+            column = left_column
+        if i == "L":
+            right_column = math.floor(right_column - ((right_column-left_column)/2))
+            column = right_column
         
-seat_id = (row * 8 + column)   
+        # print(column)
         
-print(seat_id)        
+            
+    seat_id = (row * 8 + column)
+       
+    seat_id_list.append(seat_id)
+    
+max(seat_id_list)
+print(max(seat_id_list)) 
+               
+# print(seat_id)        
 # print(seat_list)
 # print(rows)
 # print(columns)        

@@ -113,10 +113,34 @@ for example in seat_list:
     seat_id = (row * 8 + column)
        
     seat_id_list.append(seat_id)
+
     
-max(seat_id_list)
-print(max(seat_id_list)) 
+# max(seat_id_list)
+# print(max(seat_id_list)) 
                
+# print(seat_id_list)               
+seat_id_list.sort()
+# print(seat_id_list)
+
+#now im trying to find the break in the numbers. where the numbers only break by two is my seat id number (only taking action if the numbers are apart by two). so i need to write out a math equation to read these numbers in a row until a break (or a +1 appears)
+
+# for each element in the list take the current number and the next number, and then compare them. 
+# if the difference is 1 keep going, and only take action when the difference is 2.
+#Try and except is allowing the index error at the end to be ignored by excepting the break
+#enumerate is giving you access to the index you are on in a list instead of managing by hand example index[0]
+for index, item in enumerate(seat_id_list):
+    result = 0
+    try:
+        result = seat_id_list[index+1] - seat_id_list[index]
+    except:
+        break
+    if result == 2:
+        print(seat_id_list[index]+1)
+    
+    
+    # else: 
+    #     print(result)        
+                   
 # print(seat_id)        
 # print(seat_list)
 # print(rows)

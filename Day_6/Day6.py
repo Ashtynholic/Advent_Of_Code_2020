@@ -1,4 +1,4 @@
-# AshtynHolic 7-11-24
+# AshtynHolic 7-17-24
 
 # # As your flight approaches the regional airport where you'll switch to a much larger plane, customs declaration forms are distributed to the passengers.
 
@@ -43,6 +43,7 @@
 group_data_1 = []
 group_data_clean = []
 number_counter = []
+answer_list = []
 
 f = open("Day_6_Input.txt")
 
@@ -60,59 +61,28 @@ fixed_group_list = string_list.split('  ')
 
 print(fixed_group_list)
 
-print(len(fixed_group_list))
 
 # Lil pat on the back here, now that data is grouped correctly, each item on the list is the group of passengers.
 # So the data is grouped correctly, now i need to count the unique characters in each group, count them, save that count, then add all th ecounts together at the end.
 
+
 # found this Python program to count the number of distinct
 # characters present in the string
 
-S = fixed_group_list[0]
-a = ""
-for i in S:
-    if i not in a:
-        a += i
-number_counter.append(len(a))
-
+for S in fixed_group_list:
+    a = ""
+    for i in S:
+        if i == " ":
+            continue
+        if i not in a:
+            a += i    
+    number_counter.append(len(a))
 print(number_counter)
 
-# well, this works on the first item, and any one item in the list at a time, but how do i get this to walk the rest of the items? when i leave it with no indexing i get too big a number, its counting them ALL. how can i get each number from each item and append those to the number_counter list?
+print(sum(number_counter))
 
 
+    
+# DAY 2
 
-
-
-
-
-
-# ~~~~~~~~~~Extra Working Code~~~~~~~~~~~~~
-# print(groups)
-# letters = group_data_clean
-# unique_letters = set(letters[0])             # == set(['a', 'b', 'c'])
-# unique_letter_count = len(unique_letters)
-
-
-
-
-# To check if a list contains only unique values, you can compare the length of the list with the length of the set created from the list:
-
-# def is_unique(lst):
-#     return len(lst) == len(set(lst))
-# # Example usage
-# my_list = [1, 2, 3, 4, 5]
-# print(is_unique(my_list))  # Output: True
-# my_list_with_duplicates = [1, 2, 3, 3, 4, 5]
-# print(is_unique(my_list_with_duplicates))  # Output: False
-# What built-in Python data structure can be used to get unique values from a list?
-# The set data structure is used to get unique values from a list. A set automatically removes duplicates and maintains only unique elements.
-
-# my_list = [1, 2, 2, 3, 4, 4, 5]
-# unique_values = list(set(my_list))
-# print(unique_values)  # Output: [1, 2, 3, 4, 5]
-# How do I count unique items in a list in Python?
-# To count the number of unique items in a list, convert the list to a set and get the length of the set:
-
-# my_list = [1, 2, 2, 3, 4, 4, 5]
-# unique_count = len(set(my_list))
-# print(unique_count)  # Output: 5
+# each item listed by index in the list of fixed group list ([0,1,2,etc]) is each indivdual group. the People are seperated by the white space inside of each of those items. we need to compare each line seperated by white space against each other and count if a character appears in EACH line. then append that count to another list.

@@ -1,14 +1,17 @@
+# AshtynHolic 10-16-24
+# correct answer is 348
+
 RawList = []
-working_list = []
-ValueBags1 = []
-FinalDict = {}
 
 file = open("Day7Input.txt")
 
 for line in file.readlines():
     RawList.append(str(line.replace('\n','')))
-
 # ok, testing some methods to turn this into a dictionary
+
+working_list = []
+ValueBags1 = []
+FinalDict = {}
 
 # print(RawList[0].split()) shows we can split it into individual words.
 for line in RawList:
@@ -46,6 +49,36 @@ for sublist in working_list:
     FinalDict.update({OuterKey:contents_dict})
     
 # by here we have processed the entire file and created the full nested dictionary
-print(FinalDict)
+# print(FinalDict)
     
-print(FinalDict.get("bright indigo bag"))   
+# print(FinalDict.get("shiny gold bag"))
+
+#first thing recursive does, is check for an ending condition which is "No other bags" or a "shiny gold bag" these are our two conditions
+# if neither of the ending conditions, then we call ourselves again
+#if recursive function call finds a bag, add to a counter
+# if it finds no other bags, adds nothing to counter and returns
+# only recursing if not doing anything else
+
+gold_bag_count = 0
+
+def check_for_gold_bag(bag):
+    global gold_bag_count
+    if bag == "shiny gold bag":
+        gold_bag_count +=1
+        return True
+    if bag == "no other bags":
+        return 
+    if bag in FinalDict:
+        for inner_bag in FinalDict[bag]:
+            if inner_bag != "none" and check_for_gold_bag(inner_bag):
+                return True
+    return False           
+                
+for bag in FinalDict.keys():
+    if bag != "shiny gold bag":
+        check_for_gold_bag(bag)
+        
+print(gold_bag_count)
+                
+        
+

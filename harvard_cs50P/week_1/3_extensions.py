@@ -26,3 +26,10 @@ image/jpeg
 Run your program with python extensions.py. Type document.pdf and press Enter. Your program should output:
 application/pdf
 Be sure to test each of the other file formats, vary the casing of your input, and “accidentally” add spaces on either side of your input before pressing enter. Your program should behave as expected, case- and space-insensitively."""
+
+# get the file name input from user
+#clean it up
+#search for after the period for matching application type
+
+file_name = input(What File?:)
+

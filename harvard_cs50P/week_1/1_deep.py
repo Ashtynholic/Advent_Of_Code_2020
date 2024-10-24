@@ -15,7 +15,8 @@
 
 — The Hitchhiker’s Guide to the Galaxy, Douglas Adams
 
-In deep.py, implement a program that prompts the user for the answer to the Great Question of Life, the Universe and Everything, outputting Yes if the user inputs 42 or (case-insensitively) forty-two or forty two. Otherwise output No.
+In deep.py, implement a program that prompts the user for the answer to the Great Question of Life, the Universe and Everything, 
+outputting Yes if the user inputs 42 or (case-insensitively) forty-two or forty two. Otherwise output No.
 
 Hints
 No need to convert the user’s input to an int if you check for equality with "42", a str, rather than 42, an int!
@@ -37,3 +38,16 @@ Be sure to vary the casing of your input and “accidentally” add spaces on ei
 #clean up the input
 #create an if-elif-else statement to check answers; if statement ending in Else: no for all other (wrong) answers
 #Lets try to be concise and condense the code after it works?
+
+user_answer = input("What is the answer to the great question in life?: ")
+user_answer = user_answer.strip().lower()
+
+# print(user_answer)
+
+if user_answer == ("42" or "forty-two" or "forty two"):
+    print("Yes")
+else:
+    print("No")
+
+
+    

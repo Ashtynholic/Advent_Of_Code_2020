@@ -6,5 +6,38 @@ In a file called bank.py, implement a program that prompts the user for a greeti
 
 Hints
 Recall that a str comes with quite a few methods, per docs.python.org/3/library/stdtypes.html#string-methods.
-Be sure to give $0 not only for “hello” but also “hello there”, “hello, Newman”, and the like."""
+Be sure to give $0 not only for “hello” but also “hello there”, “hello, Newman”, and the like.
+Here’s how to test your code manually:
+
+Run your program with python bank.py. Type Hello and press Enter. Your program should output:
+$0 
+Run your program with python bank.py. Type Hello, Newman and press Enter. Your program should output:
+$0
+Run your program with python bank.py. Type How you doing? and press Enter. Your program should output
+$20
+Run your program with python bank.py. Type What's happening? and press Enter. Your program should output
+
+# maybe using index and find?
+$100"""
+
+greeting = input("")
+char_to_find = "h"
+word_to_find = "hello"
+
+greeting = greeting.strip().lower()
+
+print(greeting)
+
+if greeting[0:5:] == word_to_find:
+    print("$0")
+elif greeting[0] == char_to_find:
+    print("$20")
+else:
+    print("$100")
+   
+
+    
+    
+
+
 

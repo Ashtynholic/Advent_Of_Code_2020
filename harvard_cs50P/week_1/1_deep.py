@@ -42,10 +42,12 @@ Be sure to vary the casing of your input and “accidentally” add spaces on ei
 user_answer = input("What is the answer to the great question in life?: ")
 user_answer = user_answer.strip().lower()
 
-# print(user_answer)
-
-if user_answer == ("42" or "forty-two" or "forty two"):
+if user_answer == "42":
     print("Yes")
+elif user_answer == "forty-two":
+    print("Yes")
+elif user_answer == "forty two":
+    print("Yes")    
 else:
     print("No")
 

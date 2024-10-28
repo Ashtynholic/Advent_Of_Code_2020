@@ -20,13 +20,13 @@ Run your program with python bank.py. Type What's happening? and press Enter. Yo
 # maybe using index and find?
 $100"""
 
-greeting = input("")
+greeting = input("Greeting: ")
 char_to_find = "h"
 word_to_find = "hello"
 
 greeting = greeting.strip().lower()
 
-print(greeting)
+# print(greeting)
 
 if greeting[0:5:] == word_to_find:
     print("$0")

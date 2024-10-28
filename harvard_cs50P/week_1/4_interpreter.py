@@ -27,7 +27,7 @@ Run your program with python interpreter.py. Type 2 * 2 and press Enter. Your pr
 Run your program with python interpreter.py. Type 50 / 5 and press Enter. Your program should output
 10.0"""
 
-expression = input("Please Enter Your Equasion: ")
+expression = input("Please Enter Your Equation: ")
 split_express = expression.split(" ")
 
 x = split_express[0:1:]

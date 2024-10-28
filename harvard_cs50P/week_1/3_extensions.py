@@ -31,7 +31,8 @@ Be sure to test each of the other file formats, vary the casing of your input, a
 #clean it up
 #search for after the period for matching application type
 
-file_name = input("What File?\:")
+
+file_name = input("What File?:")
 
 file_name = file_name.strip().lower()
 
@@ -40,13 +41,13 @@ ext_type = file_name[-3::]
 if ext_type == "gif":
     print("image/gif")
 elif ext_type == "jpg":
-    print("image/jpg")
+    print("image/jpeg")
 elif ext_type == "png":
     print("image/png")
 elif ext_type == "pdf":
-    print("document/pdf")
+    print("application/pdf")
 elif ext_type == "txt":
-    print("document/txt")
+    print("text/plain")
 elif ext_type == "zip":
     print("application/zip")
 elif file_name[-4::] == "jpeg":

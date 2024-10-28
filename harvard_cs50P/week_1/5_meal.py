@@ -58,10 +58,10 @@ That allows check50 to test your convert function separately. You’ll learn mor
 #return catagorie
 #print catagorie
 
-time = input("What Time Is It?: ")
 
 def main():
-    last_time = convert(time)
+    asked_time = input("What Time Is It?: ")
+    last_time = convert(asked_time)
 
     if last_time >= 7.0:
         if last_time <= 8.0:
@@ -73,16 +73,16 @@ def main():
         if last_time <= 19.0:
             print("dinner time")
 
-def convert(n):
+def convert(time):
 
-    hours, minutes = (n).split(":")
+    hours, minutes = time.split(":")
 
     num_hour = float(hours)
     num_min = float(minutes)
 
     min_change = num_min/60
-    final_time = round(num_hour + min_change,2)
-    return final_time
+    time = round(num_hour + min_change,2)
+    return time
 
 if __name__ == "__main__":
     main()

@@ -27,3 +27,26 @@ Run your program with python interpreter.py. Type 2 * 2 and press Enter. Your pr
 Run your program with python interpreter.py. Type 50 / 5 and press Enter. Your program should output
 10.0"""
 
+expression = input("Please Enter Your Equasion: ")
+split_express = expression.split(" ")
+
+x = split_express[0:1:]
+y = split_express[1:2:]
+z = split_express[2:3:]
+
+new_x = ''.join(x)
+new_z = ''.join(z)
+
+final_x = float(new_x)
+final_z = float(new_z)
+final_y = ''.join(y)
+
+
+if final_y == "+":
+    print("{:.1f}".format(final_x + final_z))
+elif final_y == "-":
+    print("{:.1f}".format(final_x - final_z))
+elif final_y == "*":
+    print("{:.1f}".format(final_x * final_z))
+elif final_y == "/":
+    print("{:.1f}".format(final_x / final_z))

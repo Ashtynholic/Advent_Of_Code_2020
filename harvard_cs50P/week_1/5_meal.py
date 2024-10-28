@@ -50,3 +50,39 @@ if __name__ == "__main__":
 line from the code structure you were given. 
 
 That allows check50 to test your convert function separately. You’ll learn more about this in later weeks."""
+
+# get the input from the user
+#seperate the input
+# conver the format from "time" to floats
+#compare floats with catagories
+#return catagorie
+#print catagorie
+
+time = input("What Time Is It?: ")
+
+def main():
+    last_time = convert(time)
+
+    if last_time >= 7.0:
+        if last_time <= 8.0:
+            print("breakfast time")
+    if last_time >= 12.0:
+        if last_time <= 13.0:
+            print("lunch time")
+    if last_time >= 18.0:
+        if last_time <= 19.0:
+            print("dinner time")
+
+def convert(n):
+
+    hours, minutes = (n).split(":")
+
+    num_hour = float(hours)
+    num_min = float(minutes)
+
+    min_change = num_min/60
+    final_time = round(num_hour + min_change,2)
+    return final_time
+
+if __name__ == "__main__":
+    main()
